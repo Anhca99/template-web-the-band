@@ -1,0 +1,62 @@
+-Phân tích
+    +Tổng quát
+        1.Từ ngoài vào trong.
+        2.Từ trên xuống dưới
+        3.Tổng quan đến chi tiết
+    +Chi tiết
+        1.Vị trí
+        2.Kích thước 
+        3.Màu sắc
+        4.Kiểu dáng(kiểu chữ, hình tròn, hình vuông)
+
+*html
+    1.Nếu tạo div bấm này cho nhanh ul#nav>li*5>a
+    2.Tên class đặt theo biến hay đặt thoải mái nên đừng thắc mắc
+    3.Làm cho thằng cha ôm hết các thằng con 
+        1.1.verflow: hidden; 
+        1.2.tạo cái <div class="clear"></div> (html)
+                    .clear{
+                        clear: both;
+                    }   (css)
+
+*css
+    1.Lệnh làm cho hiện header lên
+        z-index: 1;
+    2.Do nút button search vừa tạo chiếm hết backrough
+    nên lệnh này lm mất tính kế thừa
+        display: inline-block;
+    3.Lệnh tắt dấu chấm và số đầu câu của li và ul
+        list-style-type: none;
+    4.Lệnh in hoa hết lun
+        text-transform: uppercase;
+    5.Lệnh bỏ gạch chân
+        text-decoration: none;
+    6.Lệnh hiện lên
+        display: block;
+    7.Lệnh này dùng để ẩn
+        display: none;
+    8.Lệnh chiều dài tối thiểu
+        min-width: 160px;
+    9.Lệnh Bóng đỗ
+        box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    10.Lệnh này khi ta đặt chuột vào nó sẽ hiện hình bàn tay
+        cursor: pointer;
+    11.Có 3 cách căn giữa
+        11.1.   left: 50%;
+                transform: translateX(-50%); 
+        11.2.   with:100%
+        11.3.   left: 0;
+                right: 0;
+    12.Lệnh khoảng cách chữ, làm cho chữ xa cách xa ra
+        letter-spacing: 4px;
+    13.Lệnh này in nghiêng chữ
+        font-style: italic;
+    14.Lệnh này Căn đều 2 bên của đoạn chữ
+        text-align: justify;
+    15.Lệnh này biểu hiện độ cao của một dòng
+        line-height: 1.4;
+    166.Lệnh là 3 hình cộng lại = 100% dùng đê căn lề bằng đoạn chữ trên(Kiểu làm cho lề 2 bên bằng ở trên ă)
+        width: 33.33333%;
+    17.Hai lệnh này dùng căn giữa chữ name
+         font-size: 15px;
+         text-align: center;
