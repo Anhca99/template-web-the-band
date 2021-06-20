@@ -12,51 +12,203 @@
 *html
     1.Nếu tạo div bấm này cho nhanh ul#nav>li*5>a
     2.Tên class đặt theo biến hay đặt thoải mái nên đừng thắc mắc
-    3.Làm cho thằng cha ôm hết các thằng con 
-        1.1.verflow: hidden; 
-        1.2.tạo cái <div class="clear"></div> (html)
-                    .clear{
-                        clear: both;
-                    }   (css)
+* Những thành phần thường gặp trên giao diện website
+    * Cách đặt tên:
+    - Header(Đầu trang).
+    - Navigation(Điều hướng của trang. Điều hướng chính của wesite(Trang chủ, Khóa học, Lớp Học, Hướng dẫn)).
+    - Breadcrumb(là những thứ cho chúng ta biết đang ở đâu).
+       vd: youtube > Thịnh hành chỉ cho chúng ta biết đang ở trang thịnh hành.
+    - Sidebar(là phần menu bấm để di chuyển. Nó nằmbên trái hay bên phải màn hình website).
+        vd: kênh youtube Sidebar nằm bên trái màn hình:
+            Trang trủ
+            Thịnh hành 
+            Kênh Đăng kí
+            Thư viện
+            Lịch sử
+            Video của bạn
+            Xem sau
+    - Slider(Là những phần trình diễn nội dung. vd: như trên màn hình shoppe có mấy hình quảng cáo tự lướt qua ă).
+    - Banner(được những hình ảnh quảng cáo trên website)
+    - Content(Phần nội dung của website).
+    - Footer(chân trang phần cuối trang website).
 
-*css
-    1.Lệnh làm cho hiện header lên
-        z-index: 1;
-    2.Do nút button search vừa tạo chiếm hết backrough
-    nên lệnh này lm mất tính kế thừa
+* Trước khi làm thiết kế website ta cần:
+ 1. Phân tích.
+ 2. Dựng base(Xây móng).
+ 3. Xây dựng từng phần theo phân tích.
+ 4. Hoàn thiện.
+
+ * Xây dựng website the band:
+ 1. Phân tích.
+    - Header
+    - Slider
+    - Container(Chứa thằng Content)
+    - Content
+        + About(phần giới thiệu)
+        + Tour
+        + Contact
+        + Image
+    - Footer
+    ===> coi những cái nào mà css dùng chung ta nên tạo cho nó cái tên riêng, sau đóa cứ mỗi lần html ta cứ đặt vào class
+ 2. Dựng base(Xây móng).
+    - Câu hỏi đặt ra: 
+    + Vị trí
+    + kích thước (width, height)
+    + màu sắc
+    + kiểu dáng(kiểu chữ, hình tròn, vuôn,...)
+ 3. Xây dựng từng phần theo phân tích.
+ 4. Hoàn thiện.
+
+ * Câu lệnh thường dùng:
+ 0. #nav > li > a (này cấp 1)
+    #nav li a (này cấp 2)
+ 1. có 3 cách đặt tên id=" " mà chứa cả website: app, main, wrapper.
+ 2. giúp những button chính từ cột chuyển thành 1 hàng
+    display: inline-block;
+ 3. Ẩn đi những thằng con của More
+    display: none;
+ 4. tắt gạch chân
+    text-decoration: none;
+ 5. line là đường, height là chiều cao. Làm cho cho button bằng với header 
+    line-height: 46px;
+ 6. padding cho button cách xa ra nhau
+    padding: 0 24px;
+ 7. xét phong chữ cho cả web
+    html{
+        font-family: Arial, Helvetica, sans-serif;
+    }
+ 8. a chọn li:hover vì sao này ta chọn các thằng con của more thì nó sẽ không mất hover của thằng more */
+    #nav li:hover a{
+
+    }
+ 9. Để cho những thằng con của more nằm thành một hàng thì ta cho thằng more (position: relative;) còn thằng con subnav (position: absolute;)
+ 10. khi mà nội dung giống nhau ta có thể dùng cú pháp này cho dễ nhìn
+    #nav > li:hover > a,
+    #nav .subnav li:hover a{
+        color: #000;
+        background-color: #ccc;
+        /* đặt nó ở đay giúp hover = với header lun 
         display: inline-block;
-    3.Lệnh tắt dấu chấm và số đầu câu của li và ul
-        list-style-type: none;
-    4.Lệnh in hoa hết lun
-        text-transform: uppercase;
-    5.Lệnh bỏ gạch chân
-        text-decoration: none;
-    6.Lệnh hiện lên
-        display: block;
-    7.Lệnh này dùng để ẩn
-        display: none;
-    8.Lệnh chiều dài tối thiểu
-        min-width: 160px;
-    9.Lệnh Bóng đỗ
+    }
+ 11. giúp cho hover chiều ngang của con thằng more = với nó
+    width: 100%;
+ 12. bỏ những dấu chấm của li ở đầu câu có 2 Cách
+   Cách 1:
+         list-style: none;
+   Cách 2:
+         list-style-type: none;
+ 13. giúp chữ thường thành chữ hoa 
+    text-transform: uppercase;
+ 14. con của thằng more dài ra ó sẽ dài theo */
+    min-width: 160px;
+ 14.1. Lệnh Bóng đỗ
         box-shadow: 0 0 10px rgba(0,0,0,0.3);
-    10.Lệnh này khi ta đặt chuột vào nó sẽ hiện hình bàn tay
-        cursor: pointer;
-    11.Có 3 cách căn giữa
-        11.1.   left: 50%;
-                transform: translateX(-50%); 
-        11.2.   with:100%
-        11.3.   left: 0;
-                right: 0;
-    12.Lệnh khoảng cách chữ, làm cho chữ xa cách xa ra
-        letter-spacing: 4px;
-    13.Lệnh này in nghiêng chữ
-        font-style: italic;
-    14.Lệnh này Căn đều 2 bên của đoạn chữ
-        text-align: justify;
-    15.Lệnh này biểu hiện độ cao của một dòng
-        line-height: 1.4;
-    166.Lệnh là 3 hình cộng lại = 100% dùng đê căn lề bằng đoạn chữ trên(Kiểu làm cho lề 2 bên bằng ở trên ă)
-        width: 33.33333%;
-    17.Hai lệnh này dùng căn giữa chữ name
-         font-size: 15px;
-         text-align: center;
+ 15. để không bị set cứng ta cho (ta cho % chứ ko pahir px để ko bị set cứng)
+    top: 100%;
+    left: 0;
+ 16. cho icon nó nằm về bên phải */
+    float: right;
+ 17. hiệu ứng hiện bàn tay khi chổ nào bấm vào được là cho hiện bàn tay */
+    cursor: pointer;
+ 18. set cứng header(Home, Band, Tour, Contact) để khi cuộn thì nó ko bị trôi theo dung position: fixed; top: 0; left: 0; right: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+ 19. cách hiển thi ảnh phần slider
+    background: url('/assets/img/slider/slider1.jpg') top center / cover no-repeat;
+ 20. giông như top nó sẽ nhảy lên trên 
+    bottom: 47px;
+ 21. để lùi lại rồi dùng text-align: center; để căn giữa đoạn chữ ta có 4 cách:
+   Cách 1:
+      left: 50%;
+      transform: translate(-50%);
+      text-align: center;
+   Cách 2:
+      width: 100%;
+      text-align: center;
+   Cách 3:
+      left: 0;
+      right: 0;
+      text-align: center;
+   Cách 4:
+      margin-left: auto;
+      margin-right: auto;
+ 22. để căn giữa đoạn chữ 
+    text-align: center;
+ 23. căn chỉnh đồ dày của chữ
+    font-weight: 500;
+ 24. tại vì khi cuộn ảnh thì ta mất phần header để khăc khắc phục
+    z-index: 1;
+ 25. vì nó cùng sử dụng text-align: center; nên đặt lệnh như vậy 
+   #content .section-heading,
+   #content .section-sub-heading{
+      text-align: center;
+   }
+ 26. Lệnh làm cho chữ cách xa nhau 
+    letter-spacing: 4px;
+ 27. Lệnh làm chữ nghiêng
+    font-style: italic; 
+ 28. căn đều đoạn chữ lề của hai bên ra
+    text-align: justify;
+ 29. để chỉnh đọ cao của một dòng. nếu là tiếng anh 1.4, tiếng việt 1.6
+    line-height: 1.4;
+ 30. có 2 cách giúp 3 ảnh = với width = 100%
+   Cách 1:
+      width: 33.33333%;
+   Cách 2: 
+      width: calc(100% / 3);
+ 31. Lệnh giúp các góc của hình vuông, chữ nhật đẹp hơn
+    border-radius: 4px;
+ 32. Có 2 cách ôm hết các thằng con bên trong thường dùng cách 1
+   Cách 1: <div class="clear"></div>
+      .clear{
+         clear: both;
+      }
+   Cách 2:
+      overflow: hidden;
+ 33. Tạo 1 cái class riêng lẻ .text-while 
+    chứa color: #fff !important để xử lí màu hiện chữ màu trăng lên.
+      CSS:
+         .text-white{
+            color: #fff !important;
+         }
+      HTML:
+          <h2 class="section-heading text-white">TOUR DATES</h2>
+          <p class="section-sub-heading text-white">Remember to book your tickets!</p>
+ 34. Lệnh hiển thị dấu gạch ngang
+        border-bottom: 1px solid #ddd;
+ 35. Lệnh tạo hình tròn, tùy vào width và height càng lơn thì hình tròn càng lớn
+         border-radius: 50%;
+ 36. tắt đi khung bảng khi mình tạo bảng xong ă, nghĩa là mình tạo xong rồi nó vẫn còn hiện khung hình màu đen
+	outline: none;
+ 37. Có 3 cái lệnh này tóm tắt lại thành 1 hàng lun:
+   margin-top: 32px;
+   margin-left: -8px; =>margin: 32px -8px 0;
+   margin-right: -8px;
+ 38. Khi ta chạm vào ảnh ảnh sẽ mờ đi
+   .plac e-img:hover{
+    opacity: 0.6;
+}
+ 39. tăng chiều cao cho thăng cah ôm hết các con thêm 32px */
+    padding-bottom: 32px;
+ 40.
+ 41.
+ 42.
+ 43.
+ 44.
+ 45.
+ 46.
+ 47.
+ 48.
+ 49.
+ 50.
+ 51.
+ 52.
+ 53.
+ 54.
+ 55.
+ 56.
+ 57.
+ 58.
+ 59.
+ 60.
