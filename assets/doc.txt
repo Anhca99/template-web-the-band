@@ -166,6 +166,12 @@
       }
    Cách 2:
       overflow: hidden;
+   Cách 3: dùng ::after để ôm hết thằng con mà ko cần dung clear nữa
+      .row::after{
+      content: "";
+      display: block;
+      clear: both;
+}
  33. Tạo 1 cái class riêng lẻ .text-while 
     chứa color: #fff !important để xử lí màu hiện chữ màu trăng lên.
       CSS:
@@ -191,24 +197,15 @@
 }
  39. tăng chiều cao cho thăng cah ôm hết các con thêm 32px */
     padding-bottom: 32px;
- 40.
- 41.
- 42.
- 43.
- 44.
- 45.
- 46.
- 47.
- 48.
- 49.
- 50.
- 51.
- 52.
- 53.
- 54.
- 55.
- 56.
- 57.
- 58.
- 59.
- 60.
+ 40. thêm !important khi cho những chổ khác dùng ké
+   .text-center{
+      text-align: center !important;
+   }
+ 41. placeholder="Name" là tên gợi ý trong input
+   <input type="text" name="" placeholder="Name" id="" class="form-control">
+ 42. Lệnh giúp thông báo điền trước khi nhấn gửi thông tin
+   <input required>
+ 43. cuộn height 
+    scroll-behavior: smooth;
+ 44. link thay đổi icon đầu tiên trên web
+    <link rel="icon" href="./assets/img/band/the-band.png" type="image/x-icon"/>
